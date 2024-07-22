@@ -4,20 +4,20 @@ import app from "./app.js";
 import { PORT } from "./constants.js";
 
 dotenv.config({
-    path: './env'
-})
+ path: "./env",
+});
 
 connectDB()
-.then(() => {
-    app.listen(PORT, () => {
-        console.log(`server is running at port : ${PORT}`)
-    })
+ .then(() => {
+  app.listen(PORT, () => {
+   console.log(`server is running at port : ${PORT}`);
+  });
 
-    app.on("error", (error) => {
-        console.log("error: ", error)
-        throw error
-    })
-})
-.catch((err) => {
-    console.log("MongoDB connection faild !!", err)
-})
+  app.on("error", (error) => {
+   console.log("error: ", error);
+   throw error;
+  });
+ })
+ .catch((err) => {
+  console.log("MongoDB connection faild !!", err);
+ });
