@@ -73,13 +73,9 @@ userSchema.methods.gerenateAccessToken = function () {
  );
 };
 userSchema.methods.refereshAccessToken = function () {
- jwt.sign(
-  {
-   _id: this._id,
-  },
-  process.env.REFERESH_TOKEN_SECRET,
-  { expiresIn: process.env.REFERESH_TOKEN_EXPITRY }
- );
+ jwt.sign({ _id: this._id }, process.env.REFERESH_TOKEN_SECRET, {
+  expiresIn: process.env.REFERESH_TOKEN_EXPITRY,
+ });
 };
 
 export const User = mongoose.model("User", userSchema);
