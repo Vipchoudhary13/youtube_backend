@@ -4,9 +4,9 @@ import { upload } from "../middlewares/multer.middleware.js";
 
 const router = Router();
  
-router.route("/resister").post(upload.fields([
+router.route("/register").post(upload.fields([
     {
-        name: "avtar",
+        name: "avatar",
         maxCount: 1
     },
     {

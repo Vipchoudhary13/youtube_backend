@@ -1,6 +1,7 @@
 import multer from "multer";
 
-const storage = multer.diskStorage({
+const storage = multer.diskStorage(
+  {
   destination: function (req, file, cb) {
     cb(null, "./public/temp");
   },
@@ -8,7 +9,7 @@ const storage = multer.diskStorage({
     //   const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
     //   cb(null, file.fieldname + "-" + uniqueSuffix);
 
-    cd(null, file.originalname);
+    cb(null, file.originalname);
   },
 });
 
